@@ -1,0 +1,5 @@
+name = "StringMatch"
+uuid = "69a22f66-6241-5a41-9d5c-60310ef258ec"
+author = ["Hiroyuki Shindo <hshindo@outlook.com>"]
+
+[deps]

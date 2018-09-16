@@ -1,0 +1,7 @@
+docs/build/
+docs/site/
+sandbox.jl
+benchmark.jl
+*.jar
+.data
+*.pdf
