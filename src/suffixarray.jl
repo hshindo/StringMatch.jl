@@ -6,15 +6,23 @@ struct SuffixArray
     lcps::Vector{Int}
 end
 
-mutable struct SuffixArray
-    data::Vector{Int}
-    lcparray::Vector{Int}
+function SuffixArray(data::String)
+    index = sais(data)
+    lcps = lcparray(data, index)
 end
 
-Base.getindex(sa::SuffixArray, i::Int) = sa.data[i]
+function Base.findall(sa::SuffixArray, query::String)
+    chars = Vector{Char}(query)
+    i = 1
+    j = length(sa)
+    while i <= j
+        k = (i+j) ÷ 2
+        ii = sa.index[k]
+        while sa.data[ii+m] == chars[m]
+            m == length(chars) && return ii
+            m += 1
+        end
 
-function SuffixArray(text::Vector{Int})
-    sa = sais(text)
-    lcparray = StringMatch.lcparray(sa, text)
-    SuffixArray(sa, lcparray)
+    end
+    
 end

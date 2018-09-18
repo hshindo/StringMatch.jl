@@ -119,7 +119,7 @@ function sais(text::Vector{T}, sa::Vector{Int}, fs::Int, n::Int, k::Int) where T
             end
         end
         RA = offset_to_array(sa, m+newfs+1)
-        sais(RA, sa, newfs, m, name, false)
+        sais(RA, sa, newfs, m, name)
 
         i = n
         j = 2m
